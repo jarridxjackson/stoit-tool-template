@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>My Tool</title>
+  <meta name="description" content="A STOIT tool. Works on its own, plugs into STOIT." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧩</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Shown only when STOIT opened this tool for a task. -->
+  <aside class="stoit-bar" id="stoit-bar" hidden>
+    <span class="stoit-dot" aria-hidden="true"></span>
+    <div class="stoit-what">
+      <small>From <b id="stoit-from">STOIT</b></small>
+      <b id="stoit-task"></b>
+      <small id="stoit-when"></small>
+    </div>
+    <span class="stoit-clock" id="stoit-clock" hidden></span>
+  </aside>
+
+  <header class="top">
+    <span class="logo" id="logo" aria-hidden="true">🧩</span>
+    <div>
+      <h1 id="name">My Tool</h1>
+      <p class="tagline" id="tagline"></p>
+    </div>
+  </header>
+
+  <main>
+    <!-- ─── Your tool goes here. This example turns a task into a quick checklist and a result. ─── -->
+    <section class="card">
+      <label class="field">What are you working on?
+        <input id="task" maxlength="140" placeholder="e.g. Get dressed for the client pitch" />
+      </label>
+      <ul class="steps" id="steps"></ul>
+      <form class="add-step" id="add-step">
+        <input id="step" maxlength="160" placeholder="Add a step" aria-label="New step" />
+        <button class="btn">Add</button>
+      </form>
+      <label class="field">Result
+        <textarea id="result" rows="3" maxlength="280" placeholder="What did you decide or make?"></textarea>
+      </label>
+      <div class="actions">
+        <button class="btn primary" id="done">✓ Done</button>
+      </div>
+    </section>
+
+    <section class="card" id="history-card" hidden>
+      <h2>Recent</h2>
+      <ol class="history" id="history"></ol>
+    </section>
+    <!-- ─── End of your tool. ─── -->
+  </main>
+
+  <footer class="foot">
+    <span>A <a href="https://github.com/jarridxjackson/stoit-sdk">STOIT tool</a>. Works on its own, plugs into STOIT.</span>
+    <a href="stoit.json">stoit.json</a>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="stoit-sdk.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

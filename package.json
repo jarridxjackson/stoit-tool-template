@@ -1,0 +1,14 @@
+{
+  "name": "my-tool",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A STOIT tool. Works on its own, plugs into STOIT.",
+  "scripts": {
+    "new": "node scripts/new.js",
+    "check": "node scripts/check.js",
+    "test": "node --test test/*.test.js && node scripts/check.js",
+    "serve": "python3 -m http.server 8080"
+  },
+  "license": "MIT",
+  "engines": { "node": ">=18" }
+}

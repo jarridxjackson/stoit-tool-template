@@ -1,0 +1,29 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jarridxjackson/stoit-sdk/main/schema/stoit.schema.json",
+  "stoit": "1",
+  "id": "my-tool",
+  "name": "My Tool",
+  "icon": "🧩",
+  "tagline": "TODO: the painful problem this solves, in one line.",
+  "url": "https://jarridxjackson.github.io/my-tool/",
+  "repo": "https://github.com/jarridxjackson/my-tool",
+  "version": "0.1.0",
+  "author": "jarridxjackson",
+  "pitch": {
+    "villain": { "name": "TODO: Name the Villain", "emoji": "👾", "scene": "TODO: set the scene. What does the problem feel like, in a sentence or two?" },
+    "whys": [
+      { "q": "Why should I use this?", "a": "TODO: the direct benefit." },
+      { "q": "Why does that matter?", "a": "TODO: what it changes for them." },
+      { "q": "Why is it still a problem?", "a": "TODO: why the usual fixes fail." },
+      { "q": "Why can’t I just wing it?", "a": "TODO: the cost of doing nothing." },
+      { "q": "Why now?", "a": "TODO: the reason to start today." }
+    ],
+    "save": { "hours": 1, "money": 0, "basis": "TODO: how you worked the savings out." },
+    "howTo": ["TODO: first step", "TODO: second step", "TODO: third step"],
+    "bestFor": "TODO: who it's for"
+  },
+  "helpsWith": { "types": ["action"], "keywords": ["todo"] },
+  "inputs": ["task"],
+  "outputs": [{ "type": "text", "label": "Result" }],
+  "privacy": "Everything stays on your device (browser storage). Nothing is uploaded."
+}
