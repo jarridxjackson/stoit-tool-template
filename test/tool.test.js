@@ -17,3 +17,14 @@ test('STOIT would open this tool, and the tool reads the task back', () => {
   const url = Stoit.launchUrl(m, { id: 't1', title: 'Example task', type: m.helpsWith.types[0] || 'action' }, { returnTo: 'https://stoit.app/' });
   assert.equal(Stoit.context({ hash: new URL(url).hash }).task.title, 'Example task');
 });
+
+test('every `npm run …` the docs and scripts mention exists in package.json', () => {
+  const root = path.join(__dirname, '..');
+  const scripts = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8')).scripts;
+  const files = ['README.md', 'DAILY.md', 'scripts/new.js', 'scripts/check.js', 'scripts/readme.js'].filter((f) => fs.existsSync(path.join(root, f)));
+  for (const f of files) {
+    for (const [, name] of fs.readFileSync(path.join(root, f), 'utf8').matchAll(/npm run ([a-z][\w-]*)/g)) {
+      assert.ok(scripts[name], `${f} mentions "npm run ${name}", but package.json has no "${name}" script`);
+    }
+  }
+});
